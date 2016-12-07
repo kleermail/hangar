@@ -1,5 +1,6 @@
 module Hangar
   class ResourcesController < ActionController::Base
+    skip_before_action :verify_authenticity_token
 
     def create
       created = FactoryGirl.create resource, *traits, resource_attributes
